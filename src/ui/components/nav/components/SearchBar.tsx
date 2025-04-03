@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { SearchIcon, CameraIcon } from "lucide-react";
+import Link from "next/link";
 
 export const SearchBar = ({ channel }: { channel: string }) => {
 	async function onSubmit(formData: FormData) {
@@ -34,13 +35,13 @@ export const SearchBar = ({ channel }: { channel: string }) => {
 					<span className="sr-only">search</span>
 					<SearchIcon aria-hidden className="h-5 w-5" />
 				</button>
-				<button
-					type="button"
+				<Link
+					href={`/${channel}/imageRec`}
 					className="inline-flex aspect-square w-10 items-center justify-center text-neutral-500 hover:text-neutral-700 focus:text-neutral-700"
 				>
 					<span className="sr-only">camera</span>
 					<CameraIcon aria-hidden className="h-5 w-5" />
-				</button>
+				</Link>
 			</div>
 		</form>
 	);
