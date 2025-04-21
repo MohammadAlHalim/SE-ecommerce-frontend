@@ -1,0 +1,8 @@
+mutation HardwareChatMessage($query: String!, $sessionId: String) {
+	hardwareChatMessage(input: { query: $query, sessionId: $sessionId }) {
+		response
+		chat {
+			sessionId
+		}
+	}
+}
